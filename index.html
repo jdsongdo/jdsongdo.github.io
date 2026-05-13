@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>존듀이 아카데미 · 송도 원서 정독 전문</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2D7F;
+    --navy-deep: #111E5A;
+    --navy-mid: #243494;
+    --gold: #D4AF6A;
+    --cream: #F7F5EF;
+    --white: #FFFFFF;
+    --text: #1a1a1a;
+    --text-muted: #666;
+    --blue-soft: #E6EBF8;
+    --green-soft: #E1F5EE;
+    --amber-soft: #FAEEDA;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Sans KR', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; line-height: 1.7; }
+
+  /* ── HERO ── */
+  .hero { background: var(--navy); min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 24px 60px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 80% 20%, rgba(212,175,106,0.08) 0%, transparent 60%), radial-gradient(ellipse 50% 80% at 10% 90%, rgba(255,255,255,0.04) 0%, transparent 50%); pointer-events: none; }
+  .hero-inner { max-width: 680px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
+  .hero-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.1s; }
+  .lighthouse-svg { margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .hero-academy { font-family: 'Noto Serif KR', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 6px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s; }
+  .hero-academy-en { font-family: 'EB Garamond', serif; font-style: italic; font-size: 13px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .hero-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.45s; }
+  .hero-salient { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 38px); font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 16px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s; }
+  .hero-en { font-family: 'EB Garamond', serif; font-style: italic; font-size: 15px; color: var(--gold); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .hero-sub { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.85; margin-bottom: 36px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.7s; }
+  .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 44px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.75s; }
+  .badge { font-size: 11px; font-weight: 500; letter-spacing: 0.05em; padding: 6px 13px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.65); }
+  .hero-cta { display: block; background: var(--gold); color: var(--navy-deep); font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 600; padding: 18px 28px; border-radius: 4px; text-decoration: none; text-align: center; transition: opacity 0.2s; opacity: 0; animation: fadeUp 0.8s ease forwards 0.85s; max-width: 320px; }
+  .hero-cta:hover { opacity: 0.88; }
+  .hero-scroll { margin-top: 48px; font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.12em; text-transform: uppercase; opacity: 0; animation: fadeUp 0.8s ease forwards 1s; }
+
+  /* ── HERO 하단 공신력 배지 ── */
+  .hero-credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.95s; }
+  .cred-badge { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; padding: 5px 11px; border-radius: 3px; background: rgba(212,175,106,0.15); border: 1px solid rgba(212,175,106,0.3); color: var(--gold); }
+
+  /* ── SHARED ── */
+  .section-inner { max-width: 680px; margin: 0 auto; }
+  .section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+  .section-title { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 4vw, 32px); font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 8px; }
+  .section-title-en { font-family: 'EB Garamond', serif; font-style: italic; font-size: 13px; color: #aaa; letter-spacing: 0.06em; margin-bottom: 28px; }
+
+  /* ── WHY 존듀이 ── */
+  .cow-section { background: var(--white); padding: 80px 24px; }
+  .amber-card { background: var(--amber-soft); border-radius: 8px; padding: 20px 22px; margin-bottom: 12px; }
+  .amber-card .card-label { color: #854F0B; }
+  .amber-card .card-main { color: #412402; }
+  .amber-card .card-sub { color: #633806; }
+  .card-label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 8px; }
+  .card-main { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 600; line-height: 1.5; margin-bottom: 8px; }
+  .card-sub { font-size: 13px; line-height: 1.78; }
+  .arrow-divider { text-align: center; font-size: 20px; color: #ddd; margin: 10px 0; }
+  .navy-card { background: var(--navy); border-radius: 8px; padding: 22px 24px; margin-bottom: 10px; }
+  .navy-card .card-label { color: rgba(255,255,255,0.4); }
+  .navy-card .card-main { color: var(--white); }
+  .navy-card .card-sub { color: rgba(255,255,255,0.62); }
+  .gold-quote { border-left: 3px solid var(--gold); padding: 14px 18px; background: #fffdf5; border-radius: 0 6px 6px 0; margin-top: 16px; }
+  .gold-quote p { font-size: 13px; color: #5a4010; line-height: 1.85; }
+
+  /* ── PHILOSOPHY ── */
+  .philosophy-section { background: var(--cream); padding: 80px 24px; }
+  .phil-grid { display: grid; gap: 10px; margin-top: 28px; }
+  .phil-card { display: flex; gap: 16px; background: var(--white); border-radius: 8px; padding: 18px 20px; align-items: flex-start; }
+  .phil-num { font-family: 'EB Garamond', serif; font-style: italic; font-size: 26px; color: var(--navy); opacity: 0.2; line-height: 1; flex-shrink: 0; width: 28px; }
+  .phil-title { font-family: 'Noto Serif KR', serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+  .phil-desc { font-size: 12px; color: var(--text-muted); line-height: 1.75; }
+
+  /* ── PROGRAMS ── */
+  .programs-section { background: var(--white); padding: 80px 24px; }
+  .prog-category-block { margin-top: 28px; }
+  .prog-category-block:first-of-type { margin-top: 8px; }
+  .prog-category { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); opacity: 0.45; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(27,45,127,0.1); }
+  .prog-alert { background: var(--navy); border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; }
+  .prog-alert p { font-family: 'Noto Serif KR', serif; font-size: 14px; color: var(--white); line-height: 1.6; font-weight: 600; }
+  .prog-alert p em { color: var(--gold); font-style: normal; }
+  .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .program-card { background: var(--cream); border-radius: 8px; padding: 18px 20px; border: 1px solid rgba(27,45,127,0.06); transition: transform 0.2s, box-shadow 0.2s; }
+  .program-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,45,127,0.09); }
+  .program-card.featured { background: var(--navy); grid-column: span 2; }
+  .program-card.full { grid-column: span 2; }
+  .prog-num { font-family: 'EB Garamond', serif; font-style: italic; font-size: 20px; color: var(--navy); opacity: 0.2; margin-bottom: 8px; line-height: 1; }
+  .program-card.featured .prog-num { color: var(--white); }
+  .prog-name { font-family: 'Noto Serif KR', serif; font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; line-height: 1.3; }
+  .program-card.featured .prog-name { color: var(--white); }
+  .prog-en { font-family: 'EB Garamond', serif; font-style: italic; font-size: 11px; color: #aaa; margin-bottom: 8px; }
+  .program-card.featured .prog-en { color: rgba(255,255,255,0.3); }
+  .prog-desc { font-size: 12px; color: var(--text-muted); line-height: 1.75; }
+  .program-card.featured .prog-desc { color: rgba(255,255,255,0.65); }
+  .prog-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
+  .prog-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; background: var(--blue-soft); color: var(--navy); }
+  .program-card.featured .prog-tag { background: rgba(212,175,106,0.18); color: var(--gold); }
+
+  /* 렉사일 북 리스트 */
+  .lexile-box { margin-top: 12px; background: rgba(255,255,255,0.08); border-radius: 6px; padding: 12px 14px; }
+  .lexile-label { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+  .lexile-books { display: flex; flex-wrap: wrap; gap: 5px; }
+  .lexile-book { font-size: 10px; font-family: 'EB Garamond', serif; font-style: italic; color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.07); padding: 3px 9px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.1); }
+
+  /* 리터러시 사이클 */
+  .literacy-cycle { margin-top: 20px; padding: 16px 20px; background: var(--blue-soft); border-radius: 8px; }
+  .cycle-label { font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy); opacity: 0.5; margin-bottom: 10px; }
+  .cycle-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .cycle-item { font-size: 11px; font-weight: 600; color: var(--navy); background: var(--white); padding: 5px 11px; border-radius: 20px; }
+  .cycle-arrow { font-size: 12px; color: var(--navy); opacity: 0.3; }
+
+  /* ── TEACHERS ── */
+  .teachers-section { background: var(--navy-deep); padding: 80px 24px; position: relative; overflow: hidden; }
+  .teachers-section::before { content: ''; position: absolute; top: -40%; right: -20%; width: 60%; height: 140%; background: radial-gradient(ellipse, rgba(212,175,106,0.06) 0%, transparent 70%); pointer-events: none; }
+  .teachers-section .section-title { color: var(--white); }
+  .teachers-section .section-title-en { color: rgba(255,255,255,0.28); }
+  .teacher-grid { display: grid; gap: 10px; margin-top: 28px; }
+  .teacher-card { border-radius: 8px; padding: 20px 22px; }
+  .teacher-card.rep { background: var(--gold); }
+  .teacher-card.director { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); }
+  .teacher-card.native { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+  .teacher-card.staff { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+  .teacher-role { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px; }
+  .teacher-card.rep .teacher-role { color: rgba(27,45,127,0.55); }
+  .teacher-card.director .teacher-role, .teacher-card.native .teacher-role, .teacher-card.staff .teacher-role { color: var(--gold); }
+  .teacher-name { font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; margin-bottom: 6px; line-height: 1.35; }
+  .teacher-card.rep .teacher-name { color: var(--navy-deep); }
+  .teacher-card.director .teacher-name, .teacher-card.native .teacher-name, .teacher-card.staff .teacher-name { color: var(--white); }
+  .teacher-desc { font-size: 12px; line-height: 1.8; }
+  .teacher-card.rep .teacher-desc { color: rgba(27,45,127,0.72); }
+  .teacher-card.director .teacher-desc, .teacher-card.native .teacher-desc, .teacher-card.staff .teacher-desc { color: rgba(255,255,255,0.55); }
+  .teacher-highlight { margin-top: 8px; font-size: 12px; font-weight: 700; }
+  .teacher-card.rep .teacher-highlight { color: var(--navy-deep); }
+  .teacher-card.director .teacher-highlight, .teacher-card.native .teacher-highlight, .teacher-card.staff .teacher-highlight { color: rgba(255,255,255,0.85); }
+  .teacher-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 12px; }
+  .teacher-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.07em; padding: 3px 9px; border-radius: 20px; }
+  .teacher-card.rep .teacher-tag { background: rgba(27,45,127,0.12); color: var(--navy-deep); }
+  .teacher-card.director .teacher-tag, .teacher-card.native .teacher-tag, .teacher-card.staff .teacher-tag { background: rgba(212,175,106,0.15); color: var(--gold); }
+
+  /* ── STORY ── */
+  .story-section { background: var(--cream); padding: 80px 24px; }
+  .story-body { background: var(--white); border-radius: 8px; padding: 32px 28px; margin-top: 28px; }
+  .story-para { font-family: 'Noto Serif KR', serif; font-size: 15px; color: var(--text); line-height: 2.15; margin-bottom: 22px; }
+  .story-para:last-of-type { margin-bottom: 0; }
+  .story-para em { color: var(--navy); font-style: normal; font-weight: 700; }
+  .story-para .gold-em { color: #8B6914; font-style: normal; font-weight: 700; }
+  .story-divider { width: 32px; height: 1px; background: rgba(27,45,127,0.15); margin: 24px 0; }
+  .story-closing { text-align: center; padding: 26px 20px; background: var(--navy); border-radius: 8px; margin-top: 16px; }
+  .story-closing .big { font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 3.5vw, 20px); font-weight: 700; color: var(--white); margin-bottom: 8px; line-height: 1.5; }
+  .story-closing .small { font-size: 12px; color: rgba(255,255,255,0.4); }
+
+  /* ── VISION ── */
+  .vision-section { background: var(--white); padding: 80px 24px; }
+  .vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
+  .vision-card { border-radius: 8px; padding: 20px; }
+  .vision-card.v1 { background: var(--blue-soft); }
+  .vision-card.v2 { background: var(--navy); }
+  .vision-card.v3 { background: var(--amber-soft); }
+  .vision-card.v4 { background: var(--green-soft); }
+  .vision-icon { font-size: 22px; margin-bottom: 10px; }
+  .vision-title { font-family: 'Noto Serif KR', serif; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .vision-card.v1 .vision-title { color: var(--navy); }
+  .vision-card.v2 .vision-title { color: var(--white); }
+  .vision-card.v3 .vision-title { color: #412402; }
+  .vision-card.v4 .vision-title { color: #04342C; }
+  .vision-desc { font-size: 12px; line-height: 1.75; }
+  .vision-card.v1 .vision-desc { color: #5c6f9e; }
+  .vision-card.v2 .vision-desc { color: rgba(255,255,255,0.6); }
+  .vision-card.v3 .vision-desc { color: #633806; }
+  .vision-card.v4 .vision-desc { color: #085041; }
+  .vision-promise { margin-top: 20px; padding: 20px 22px; background: var(--cream); border-radius: 8px; border-left: 3px solid var(--gold); }
+  .vision-promise p { font-family: 'Noto Serif KR', serif; font-size: 15px; color: var(--navy); font-weight: 600; line-height: 1.6; }
+  .vision-promise span { display: block; margin-top: 6px; font-family: 'Noto Sans KR', sans-serif; font-size: 12px; color: var(--text-muted); font-weight: 400; }
+
+  /* ── CTA ── */
+  .cta-section { background: var(--navy); padding: 80px 24px; text-align: center; position: relative; overflow: hidden; }
+  .cta-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,106,0.07) 0%, transparent 70%); pointer-events: none; }
+  .cta-inner { position: relative; z-index: 1; max-width: 500px; margin: 0 auto; }
+  .cta-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+  .cta-title { font-family: 'Noto Serif KR', serif; font-size: clamp(20px, 4.5vw, 30px); font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 16px; }
+  .cta-exclusivity { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px; margin-bottom: 28px; }
+  .cta-exclusivity p { font-family: 'Noto Serif KR', serif; font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.85; }
+  .cta-sub { font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 28px; line-height: 1.8; }
+  .cta-phone { display: block; background: var(--gold); color: var(--navy-deep); font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; padding: 18px 36px; border-radius: 4px; text-decoration: none; letter-spacing: 0.04em; transition: opacity 0.2s; margin-bottom: 16px; }
+  .cta-phone:hover { opacity: 0.88; }
+  .cta-hours { font-size: 11px; color: rgba(255,255,255,0.28); letter-spacing: 0.05em; line-height: 1.9; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy-deep); padding: 32px 24px 28px; text-align: center; }
+  .footer-creds { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+  .footer-cred { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; padding: 5px 12px; border-radius: 3px; background: rgba(212,175,106,0.12); border: 1px solid rgba(212,175,106,0.25); color: rgba(212,175,106,0.8); }
+  .footer-logo { font-family: 'Noto Serif KR', serif; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.65); margin-bottom: 4px; }
+  .footer-tagline { font-family: 'EB Garamond', serif; font-style: italic; font-size: 12px; color: rgba(255,255,255,0.28); margin-bottom: 14px; }
+  .footer-meta { font-size: 10px; color: rgba(255,255,255,0.18); line-height: 1.9; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 560px) {
+    .programs-grid { grid-template-columns: 1fr; }
+    .program-card.featured, .program-card.full { grid-column: span 1; }
+    .vision-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Incheon Songdo · English Reading Academy · 베러티처스 연구회 공식 소속</div>
+    <div class="lighthouse-svg">
+      <svg width="48" height="58" viewBox="0 0 56 66" fill="none">
+        <rect x="22" y="14" width="12" height="28" rx="1.5" fill="white" opacity=".7"/>
+        <rect x="17" y="7" width="22" height="10" rx="1.5" fill="white"/>
+        <polygon points="19,7 37,7 34,2 22,2" fill="white" opacity=".45"/>
+        <rect x="13" y="42" width="30" height="6" rx="1" fill="white" opacity=".55"/>
+        <line x1="7" y1="2" x2="28" y2="7" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity=".3"/>
+        <line x1="28" y1="0" x2="28" y2="7" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+        <line x1="49" y1="2" x2="28" y2="7" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity=".3"/>
+        <path d="M18 48 Q13 56 10 63" stroke="#D4AF6A" stroke-width="2" stroke-linecap="round" fill="none" opacity=".8"/>
+        <path d="M23 48 Q22 57 19 64" stroke="#D4AF6A" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M28 48 Q29 58 27 65" stroke="#D4AF6A" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M33 48 Q35 56 33 64" stroke="#D4AF6A" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9"/>
+        <path d="M38 48 Q43 56 41 63" stroke="#D4AF6A" stroke-width="2" stroke-linecap="round" fill="none" opacity=".8"/>
+      </svg>
+    </div>
+    <div class="hero-academy">존듀이 아카데미</div>
+    <div class="hero-academy-en">JOHN DEWEY ACADEMY · SONGDO</div>
+    <div class="hero-divider"></div>
+    <div class="hero-salient">깊이 읽어야만<br>자기 생각이 자란다</div>
+    <div class="hero-en">Deep reading expands the horizons of your mind.</div>
+    <div class="hero-sub">
+      내 아이에게 최고만을, 진짜 리터러시로.<br>
+      AI가 강해질수록 인간의 상상력이 비싸집니다.
+    </div>
+    <div class="hero-badges">
+      <span class="badge">리터러시 전문</span>
+      <span class="badge">천천히, 깊이있게</span>
+      <span class="badge">상상력 · 표현력 · 논리력</span>
+      <span class="badge">한·영 이중 문해력</span>
+      <span class="badge">AI가 쓸 수 없는 생각</span>
+    </div>
+    <a href="tel:01022447010" class="hero-cta">📞 &nbsp;상담 문의 · 010-2244-7010</a>
+    <div class="hero-credentials">
+      <span class="cred-badge">베러티처스 연구회 공식 소속</span>
+      <span class="cred-badge">유즈스쿨 공식 파트너</span>
+      <span class="cred-badge">클리어플루언시 공식 파트너</span>
+    </div>
+    <div class="hero-scroll">↓ &nbsp;scroll</div>
+  </div>
+</section>
+
+
+<!-- ══ WHY 존듀이 ══ -->
+<section class="cow-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Why 존듀이</div>
+    <div class="section-title">영어 학원이지만,<br>영어를 가르치지 않습니다</div>
+    <div class="section-title-en">Not Fluent. Profound.</div>
+    <div class="amber-card">
+      <div class="card-label">많은 학원의 방식</div>
+      <div class="card-main">"더 빨리, 더 많이, 더 유창하게"</div>
+      <div class="card-sub">단어 암기, 문법, 원어민 회화. 유창하게 말하는 것을 최종 목표로 삼는 교육.</div>
+    </div>
+    <div class="arrow-divider">↓</div>
+    <div class="navy-card">
+      <div class="card-label">존듀이가 묻는 질문</div>
+      <div class="card-main">"유창하게 말하는 아이가<br>AI 시대에 가장 먼저 대체됩니다"</div>
+      <div class="card-sub">발음이 좋고 문법이 정확한 수준은 AI가 이미 완벽하게 합니다. '어떻게(How)' 말하는가가 아니라 '무엇을(What)' 말하는가를 고민하는 아이만이 AI를 앞섭니다.</div>
+    </div>
+    <div class="navy-card" style="background:#14225e;">
+      <div class="card-label">존듀이의 대답</div>
+      <div class="card-main">영어는 도구입니다. 목적은 생각입니다.</div>
+      <div class="card-sub">존듀이 아카데미는 언어가 아닌 <strong style="color:var(--gold)">생각의 뿌리</strong> — 아이만의 고유한 문체, 관점, 철학적 깊이 — 를 키웁니다. AI가 1초 만에 만드는 것에는 없는 것. 원서를 깊이 읽어야만 그 뿌리가 자랍니다.</div>
+    </div>
+    <div class="gold-quote">
+      <p><strong>30년이 증명합니다:</strong> 본질을 지키는 영어 교육으로 특목고·자사고·명문대 진학을 넘어 세계를 무대로 멋지게 사는 제자들을 다수 배출했습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PHILOSOPHY ══ -->
+<section class="philosophy-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Philosophy</div>
+    <div class="section-title">존듀이 아카데미<br>교육 철학 5가지</div>
+    <div class="section-title-en">The principles that never change</div>
+    <div class="phil-grid">
+      <div class="phil-card">
+        <div class="phil-num">1</div>
+        <div>
+          <div class="phil-title">세상이 빠를수록 고전으로</div>
+          <div class="phil-desc">소크라테스, 플라톤, 아리스토텔레스가 2500년 전에 이미 답을 써놨습니다. AI 시대일수록 고전을 읽어야 흔들리지 않는 사고의 뿌리가 생깁니다.</div>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">2</div>
+        <div>
+          <div class="phil-title">상상력 · 표현력 · 논리력</div>
+          <div class="phil-desc">AI가 강해질수록 인간의 상상력이 비싸집니다. 자신만의 훌륭한 생각을 가진 아이, AI가 흉내낼 수 없는 창의적 표현과 논리력을 키웁니다.</div>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">3</div>
+        <div>
+          <div class="phil-title">한 · 영 이중 문해력</div>
+          <div class="phil-desc">모국어 문해력은 영어로 된 지식을 담는 그릇의 크기를 결정합니다. 탄탄한 모국어 위에 세워진 영어만이 흔들리지 않는 실력이 됩니다.</div>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">4</div>
+        <div>
+          <div class="phil-title">천천히, 완전히</div>
+          <div class="phil-desc">진도보다 완전한 흡수를 중시합니다. 얼마나 많이 읽었는가가 아니라 얼마나 깊이 읽었는가로 평가합니다. 깊이가 속도를 이깁니다.</div>
+        </div>
+      </div>
+      <div class="phil-card">
+        <div class="phil-num">5</div>
+        <div>
+          <div class="phil-title">결이 맞는 소수만</div>
+          <div class="phil-desc">같은 방향을 가진 아이들이 함께 배울 때 시너지가 납니다. 같은 철학을 가진 소수의 학생과 함께 깊이 있는 수업을 진행합니다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PROGRAMS ══ -->
+<section class="programs-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Curriculum</div>
+    <div class="section-title">분야별 최상의 프로그램<br>8가지</div>
+    <div class="section-title-en">Only the best — chosen for one purpose</div>
+
+    <!-- 영어 리터러시 -->
+    <div class="prog-category-block">
+      <div class="prog-category">영어 리터러시 — 깊이 읽기</div>
+      <div class="programs-grid">
+        <div class="program-card featured">
+          <div class="prog-num">01</div>
+          <div class="prog-name">존듀이 논픽션 리터러시</div>
+          <div class="prog-en">JD Non-Fiction Literacy · 30년 전통 · 존듀이만의 시그니처 커리큘럼</div>
+          <div class="prog-desc">30년 전통의 노하우와 미국 명문 대학의 학술적 통찰이 결합된 존듀이만의 시그니처 커리큘럼입니다. 배경지식 확장과 비판적 사고를 결합한 논픽션 중심 학습은 아이들이 영어를 단순한 암기 대상이 아닌, 지식을 습득하고 논리를 세우는 강력한 도구로 활용하게 만듭니다. 세상을 읽는 눈을 키웁니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">CORE</span>
+            <span class="prog-tag">사고의 확장</span>
+            <span class="prog-tag">프리미엄 논픽션</span>
+          </div>
+        </div>
+        <div class="program-card featured" style="background:#14225e;">
+          <div class="prog-num">02</div>
+          <div class="prog-name">베러티처스 원서 정독</div>
+          <div class="prog-en">Better Teachers Novel Study · 국내외 94개 기관 검증</div>
+          <div class="prog-desc">존듀이 아카데미의 독보적인 논픽션 커리큘럼에 베러티처스의 원서 정독 시스템을 더했습니다. Novel Study, Article Reading, Wordly Wise로 이어지는 체계적인 구성은 문학을 문학답게, 비문학을 비문학답게 해부하며 읽기의 본질을 완성합니다. 아무나 가르칠 수 없는 수업입니다.</div>
+          <div class="lexile-box">
+            <div class="lexile-label">📚 Lexile 1000+ 고난도 원서 심층 분석</div>
+            <div class="lexile-books">
+              <span class="lexile-book">Station Eleven</span>
+              <span class="lexile-book">The Giver</span>
+              <span class="lexile-book">City of Brass</span>
+              <span class="lexile-book">Fahrenheit 451</span>
+              <span class="lexile-book">Frankenstein</span>
+            </div>
+          </div>
+          <div class="prog-tags" style="margin-top:10px;">
+            <span class="prog-tag">CORE</span>
+            <span class="prog-tag">정독의 근간</span>
+            <span class="prog-tag">베러티처스 연구회 소속</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 영어 원어 노출 -->
+    <div class="prog-category-block">
+      <div class="prog-category">영어 원어 노출 — 듣기 · 낭독 · 몰입</div>
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="prog-num">03</div>
+          <div class="prog-name">유즈스쿨</div>
+          <div class="prog-en">Useschool · 미국 공교육 K-12</div>
+          <div class="prog-desc">미국 현지 초·중·고 공교육 과정(K-12)을 온라인으로 학습하는 디지털 미국 교과서 프로그램. 한국어 개입 없이 100% 영어로 수학, 과학, 사회를 배우며 자연스러운 모국어 습득 방식으로 영어로 생각하는 환경을 만듭니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">영어 몰입</span>
+            <span class="prog-tag">K-12 공교육</span>
+            <span class="prog-tag">교과 연계</span>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="prog-num">04</div>
+          <div class="prog-name">클리어플루언시</div>
+          <div class="prog-en">ClearFluency · 미국 NRP 연구 기반 · 특허 기술</div>
+          <div class="prog-desc">미국 국립읽기위원회(NRP) 연구 기반 온라인 영어 낭독 도서관. 특허받은 음성 인식 기술로 실시간 발음·유창성을 교정합니다. 30일 훈련으로 독해력 30% 향상. 눈으로 읽기 + 소리내어 읽기 = 완전한 체화.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">낭독</span>
+            <span class="prog-tag">실시간 AI 교정</span>
+            <span class="prog-tag">독해력 향상</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 쓰기·말하기 -->
+    <div class="prog-category-block">
+      <div class="prog-category">쓰기 · 말하기</div>
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="prog-num">05</div>
+          <div class="prog-name">Academic Writing</div>
+          <div class="prog-en">아카데믹 에세이 · IB 수준 구조적 글쓰기</div>
+          <div class="prog-desc">논리적 사고를 글로 완성하는 훈련. 단락 구성, 근거 제시, 비판적 분석까지. 에세이를 쓰는 힘이 자기 생각을 증명하는 힘입니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">에세이</span>
+            <span class="prog-tag">논리적 글쓰기</span>
+            <span class="prog-tag">IB 수준</span>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="prog-num">06</div>
+          <div class="prog-name">Debate &amp; Discussion</div>
+          <div class="prog-en">AI 시대 구술·대면 면접 대비</div>
+          <div class="prog-desc">AI가 글을 대신 쓰는 시대, 구술 시험과 대면 면접이 늘어납니다. 실시간으로 생각을 정리하고 말로 증명하는 능력이 핵심 경쟁력입니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">토론</span>
+            <span class="prog-tag">구술 면접</span>
+            <span class="prog-tag">발표</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 한·영 이중 문해력 -->
+    <div class="prog-category-block">
+      <div class="prog-category">한·영 이중 문해력</div>
+      <div class="prog-alert">
+        <p><em>"영어만 잘하는 아이는 위험합니다."</em><br>한국어와 영어, 두 언어로 깊이 사고하는 이중 문해력이 진짜 실력입니다. 스터디포스와 영어 독서 논술의 결합은 단순한 보완이 아닌 필수입니다.</p>
+      </div>
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="prog-num">07</div>
+          <div class="prog-name">스터디포스</div>
+          <div class="prog-en">Study Force · 독해력 교정 및 언어사고 훈련</div>
+          <div class="prog-desc">인지심리학·언어학 전문가들이 개발한 독해력 교정 프로그램. 글을 의미 단위로 끊어 읽는 훈련으로 문해력과 학습 잠재력을 높입니다. 한·영 이중 문해력의 핵심을 담당합니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">국어 독해</span>
+            <span class="prog-tag">언어사고 훈련</span>
+            <span class="prog-tag">수능 최적화</span>
+          </div>
+        </div>
+        <div class="program-card">
+          <div class="prog-num">08</div>
+          <div class="prog-name">다빈치스쿨</div>
+          <div class="prog-en">Da Vinci School · 탐구 역량 강화 및 논술</div>
+          <div class="prog-desc">초등 4학년부터 중·고등학생 대상. 독서 연계 탐구 활동과 소논문(주제탐구보고서) 작성으로 비교과 역량을 강화합니다. 스스로 탐구하고 논문을 쓰는 힘을 기릅니다.</div>
+          <div class="prog-tags">
+            <span class="prog-tag">탐구·논술</span>
+            <span class="prog-tag">비교과 역량</span>
+            <span class="prog-tag">고교학점제</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 리터러시 사이클 -->
+    <div class="literacy-cycle" style="margin-top:20px;">
+      <div class="cycle-label">완전한 리터러시 사이클 — Read · Think · Present</div>
+      <div class="cycle-row">
+        <span class="cycle-item">👁 눈으로 읽기</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item">🔊 낭독</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item">💭 영어로 생각</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item">✍️ 글로 쓰기</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item">🎤 말로 표현</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item">📖 한국어 문해력</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ TEACHERS ══ -->
+<section class="teachers-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Our Team</div>
+    <div class="section-title" style="color:white;">누가 가르치는가</div>
+    <div class="section-title-en">영어의 깊이는 가르치는 사람의 깊이에서 결정됩니다</div>
+
+    <div class="teacher-grid">
+
+      <div class="teacher-card rep">
+        <div class="teacher-role">대표 · 30년 교육 전문가</div>
+        <div class="teacher-name">직접 키워서 압니다. 결과로 증명합니다.</div>
+        <div class="teacher-desc">30년 이상 영어 교육을 해온 전문가. 예송중·현송중 내신 100점 전문, 문법과 내신의 신. 과학고·영재고·자사고 합격생을 다수 배출했으며, 서울대·연세대·고려대 등 서울 상위권 대학에 수많은 아이들을 보냈습니다. 특목고·자사고·명문대 진학을 넘어 세계를 무대로 멋지게 사는 제자들을 만들어왔습니다. 그 교육 철학으로 직접 키운 딸이 지금 존듀이 아카데미의 원장입니다.</div>
+        <div class="teacher-highlight">말이 아닌 결과로 증명합니다</div>
+        <div class="teacher-tags">
+          <span class="teacher-tag">30년 교육 경력</span>
+          <span class="teacher-tag">내신·문법 전문</span>
+          <span class="teacher-tag">과고·영재고·명문대 배출</span>
+        </div>
+      </div>
+
+      <div class="teacher-card director">
+        <div class="teacher-role">원장 · 연구하는 교육자</div>
+        <div class="teacher-name">'생각의 그릇'을 키우는 리터러시 교육을 지향합니다</div>
+        <div class="teacher-desc">International Studies · Peace &amp; Conflict Studies 전공. 현재 교육공학 석사 과정 진행 중. 대표의 30년 교육 철학을 물려받아, 교육공학의 시선으로 더 정교하게 설계합니다. 열 살 때 꿈꿨던 것 — 교육을 통해 더 많은 아이들이 자신의 인생을 스스로 기획할 수 있도록 돕는 것 — 그 꿈을 이곳에서 실현하고 있습니다.</div>
+        <div class="teacher-tags">
+          <span class="teacher-tag">국제학·교육공학 전공</span>
+          <span class="teacher-tag">생각의 그릇 교육</span>
+          <span class="teacher-tag">교육공학 석사 과정</span>
+        </div>
+      </div>
+
+      <div class="teacher-card native">
+        <div class="teacher-role">원어민 선생님 · 현직 작가</div>
+        <div class="teacher-name">현직 작가가 원서를 가르친다</div>
+        <div class="teacher-desc">문학 분석 학사 · MFA 소설창작 석사 · 美 공교육 교사 출신. 한국에서 만나기 어려운 압도적인 퀄리티의 원어민 선생님. 미국 현지에서 문학을 가르쳤던 교사 경험과 MFA 전문성을 바탕으로 소설의 정교한 구조와 캐릭터의 심리를 직접 해부합니다. 작가의 시선으로 문학을 분석하는 경험, 오직 존듀이에서만 가능합니다.</div>
+        <div class="teacher-tags">
+          <span class="teacher-tag">미국 현지 교사 출신</span>
+          <span class="teacher-tag">현직 작가 직강</span>
+          <span class="teacher-tag">독보적인 문학 분석</span>
+        </div>
+      </div>
+
+      <div class="teacher-card staff">
+        <div class="teacher-role">전문 강사진 · 대표 직접 선발</div>
+        <div class="teacher-name">깐깐한 대표가 고르고 트레이닝한 선생님들</div>
+        <div class="teacher-desc">해외 대학 출신 전문 선생님으로만 구성된 강사진. 능력이 뛰어나지 않으면 채용하지 않습니다. 깐깐한 대표가 직접 고르고 트레이닝한 선생님들이 아이 한 명 한 명을 책임감 있게 지도합니다.</div>
+        <div class="teacher-tags">
+          <span class="teacher-tag">해외 대학 출신</span>
+          <span class="teacher-tag">대표 직접 선발·트레이닝</span>
+          <span class="teacher-tag">소수정예 책임 지도</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ STORY ══ -->
+<section class="story-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Our Story</div>
+    <div class="section-title">시스템이 "불가능하다"고 했던 꿈</div>
+    <div class="section-title-en">The story behind the academy</div>
+
+    <div class="story-body">
+      <p class="story-para">
+        강원도에서 태어났습니다. 어머니 혼자 저를 키우셨어요. 형편이 넉넉하지 않았지만, 집 안에는 항상 책이 있었습니다. 어머니는 바쁜 와중에도 아이에게 책을 읽어주셨고, 저는 그렇게 <em>읽는 사람</em>으로 자랐습니다.
+      </p>
+      <div class="story-divider"></div>
+      <p class="story-para">
+        열 살 때 꿈이 생겼습니다. UN을 통해 교육으로 세상을 바꾸고 싶다는 꿈. 고등학교 1학년 담임 선생님은 고개를 저으셨어요. <em>"그런 꿈은 현실적이지 않아."</em> 저는 고2 때 자퇴했습니다. 학교도, 돈도, 뚜렷한 방법도 없었습니다. 그래도 시스템 밖으로 걸어나왔습니다.
+      </p>
+      <div class="story-divider"></div>
+      <p class="story-para">
+        학교 밖에서 읽었습니다. <span class="gold-em">좋은 리터러시가 있었기에 가능했습니다.</span> 어릴 때부터 어머니와 함께 쌓아온 읽기의 힘으로 장학금 정보를 찾아냈고, 지원 방법을 스스로 알아냈고, 서류를 직접 썼습니다. 결국 <em>버클리에 갔습니다.</em> 담임 선생님이 "불가능하다"고 했던 그 방향으로.
+      </p>
+      <div class="story-divider"></div>
+      <p class="story-para">
+        지금 저는, 30년간 수많은 아이들을 키워온 대표의 교육 철학을 물려받아, 아이들에게 그 <em>생각의 뿌리</em>를 만들어주고 있습니다. 읽을 수 있는 힘, 스스로 생각할 수 있는 힘. 그것이 어떤 시스템도 빼앗을 수 없는 진짜 무기임을 저는 몸으로 압니다.
+      </p>
+    </div>
+
+    <div class="story-closing">
+      <div class="big">깊이 읽어야만 자기 생각이 자랍니다.<br>자기 생각이 있어야, 자기 인생을 삽니다.</div>
+      <div class="small">— 존듀이 아카데미 원장</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ VISION ══ -->
+<section class="vision-section">
+  <div class="section-inner reveal">
+    <div class="section-eyebrow">Our Vision</div>
+    <div class="section-title">10년 후,<br>이런 어른이 되길 바랍니다</div>
+    <div class="section-title-en">The human we are trying to grow</div>
+
+    <div class="vision-grid">
+      <div class="vision-card v1">
+        <div class="vision-icon">📖</div>
+        <div class="vision-title">스스로 읽고 판단하는 사람</div>
+        <div class="vision-desc">넘쳐나는 정보 속에서 무엇이 진짜인지 스스로 읽고 판단할 수 있는 사람. 누군가 요약해준 것이 아니라, 직접 텍스트를 마주하는 사람.</div>
+      </div>
+      <div class="vision-card v2">
+        <div class="vision-icon">💡</div>
+        <div class="vision-title">자기만의 생각이 있는 사람</div>
+        <div class="vision-desc">AI가 쓴 글과 자신의 글이 다른 사람. 고유한 문체, 관점, 철학적 깊이 — 생각의 뿌리가 있어 흔들리지 않는 사람.</div>
+      </div>
+      <div class="vision-card v3">
+        <div class="vision-icon">🎤</div>
+        <div class="vision-title">말로 증명할 수 있는 사람</div>
+        <div class="vision-desc">구술 시험, 대면 면접, 발표, 토론에서 자신의 생각을 논리적으로 풀어낼 수 있는 사람. Read · Think · Present.</div>
+      </div>
+      <div class="vision-card v4">
+        <div class="vision-icon">🌏</div>
+        <div class="vision-title">언어로 세상을 디자인하는 사람</div>
+        <div class="vision-desc">한국어와 영어, 두 언어로 깊이 사고하며 자기 인생을 스스로 기획하는 사람. 시스템에 맞추는 것이 아니라 시스템을 뛰어넘는 사람.</div>
+      </div>
+    </div>
+
+    <div class="vision-promise">
+      <p>AI가 글을 쓰는 시대, 우리 아이는 무엇으로 증명하나요?
+        <span>존듀이 아카데미는 그 질문에 대한 30년의 대답입니다.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA ══ -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <div class="cta-eyebrow">Get in Touch</div>
+    <div class="cta-title">자기 생각이 있는 아이로<br>키우고 싶다면</div>
+    <div class="cta-exclusivity">
+      <p>모두를 위한 학원이 아닙니다.<br>존듀이의 철학에 동의하고, 깊이 있는 사고의 가치를 아는 가정의 아이들만 정중히 모십니다.</p>
+    </div>
+    <div class="cta-sub">소수정예 수업이라 자리가 제한됩니다.<br>상담 후 렉사일 레벨 테스트를 통해 맞춤 커리큘럼을 설계해드립니다.</div>
+    <a href="tel:01022447010" class="cta-phone">📞 &nbsp; 010-2244-7010</a>
+    <div class="cta-hours">
+      상담 가능 시간 · 평일 오후 2시 – 8시 · 주말 오전 10시 – 오후 2시<br>
+      카카오톡 @jd_songdo · 인천 송도국제도시
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-creds">
+    <span class="footer-cred">베러티처스 연구회 공식 소속</span>
+    <span class="footer-cred">유즈스쿨 공식 파트너</span>
+    <span class="footer-cred">클리어플루언시 공식 파트너</span>
+  </div>
+  <div class="footer-logo">존듀이 아카데미 · John Dewey Academy</div>
+  <div class="footer-tagline">Read. Think. Present. — Not Fluent. Profound.</div>
+  <div class="footer-meta">
+    인천 송도 · 베러티처스 연구회 공식 소속<br>
+    @jd_songdo · 010-2244-7010 · 2026
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
