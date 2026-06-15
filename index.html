@@ -30,7 +30,7 @@
   .hero-inner { max-width: 680px; margin: 0 auto; width: 100%; position: relative; z-index: 1; }
   .hero-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.1s; }
   .lighthouse-svg { margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
-  .hero-academy { font-family: 'Noto Serif KR', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 6px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s; }
+  .hero-academy { font-family: 'Noto Serif KR', serif; font-size: clamp(28px, 6vw, 48px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 24px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.3s; }
   .hero-academy-en { font-family: 'EB Garamond', serif; font-style: italic; font-size: 13px; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; margin-bottom: 32px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
   .hero-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.2); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.45s; }
   .hero-salient { font-family: 'Noto Serif KR', serif; font-size: clamp(22px, 5vw, 38px); font-weight: 700; color: var(--white); line-height: 1.35; margin-bottom: 16px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.5s; }
@@ -351,9 +351,11 @@
   <div class="hero-inner">
     <div class="hero-tag">Read Think Present · 송도 리터러시 교육의 중심</div>
     <div class="lighthouse-svg">
-      <img src="KakaoTalk_20260604_174052299_01.png"
-           alt="존듀이 아카데미 로고"
-           style="width:140px; height:auto; display:block; filter:invert(1) saturate(0) brightness(2); mix-blend-mode:screen;">
+      <div style="width:140px; overflow:hidden; height:112px;">
+        <img src="KakaoTalk_20260604_174052299_01.png"
+             alt="존듀이 아카데미 로고"
+             style="width:140px; height:auto; display:block; filter:invert(1) saturate(0) brightness(2); mix-blend-mode:screen;">
+      </div>
     </div>
     <div class="hero-academy">존듀이 아카데미</div>
     <div class="hero-divider"></div>
@@ -415,21 +417,21 @@
         <div style="display:flex; gap:12px; align-items:flex-start;">
           <span style="font-size:18px; flex-shrink:0;">🤝</span>
           <div>
-            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:3px;">이중 교사 협력 시스템</div>
+            <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:3px;">이중 교사 협력 시스템</div>
             <div style="font-size:12px; color:var(--text-muted); line-height:1.7;">원어민 교사와 이중언어 교사가 함께 협력 — 영어와 한국어 사고를 동시에 키웁니다.</div>
           </div>
         </div>
         <div style="display:flex; gap:12px; align-items:flex-start;">
           <span style="font-size:18px; flex-shrink:0;">🔍</span>
           <div>
-            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:3px;">깊이 있는 이해 중심 학습</div>
+            <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:3px;">깊이 있는 이해 중심 학습</div>
             <div style="font-size:12px; color:var(--text-muted); line-height:1.7;">빠르게 많이가 아닌 완전히 내 것으로. 100% 이해를 목표로 하는 정독 수업.</div>
           </div>
         </div>
         <div style="display:flex; gap:12px; align-items:flex-start;">
           <span style="font-size:18px; flex-shrink:0;">👤</span>
           <div>
-            <div style="font-size:13px; font-weight:700; color:var(--navy); margin-bottom:3px;">학원이지만 과외처럼</div>
+            <div style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:3px;">학원이지만 과외처럼</div>
             <div style="font-size:12px; color:var(--text-muted); line-height:1.7;">소수 정예 6~8명, 원장급 밀착 지도. 아이 한 명 한 명을 위한 맞춤형 개별 관리.</div>
           </div>
         </div>
@@ -716,7 +718,7 @@
     <div class="section-eyebrow">Our Team</div>
     <div class="section-title" style="color:white;">누가 가르치는가</div>
     <div class="section-title-en">영어의 깊이는 가르치는 사람의 깊이에서 결정됩니다</div>
-    <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:-18px; margin-bottom:28px; font-weight:500; letter-spacing:0.03em;">경력 합계 65년 전문가 팀</div>
+    <div style="margin-top:-14px; margin-bottom:28px;"><span style="display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--gold); background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.3); padding:5px 12px; border-radius:3px;">경력 합계 65년 · 전문가 팀</span></div>
 
     <div class="teacher-grid">
 
@@ -980,30 +982,28 @@
     <div class="cta-title">존듀이의 철학이 마음에 닿았다면</div>
     <div class="cta-exclusivity">
       <p>깊이 있는 사고의 가치를 아는 <br>학부모님과 아이들을 기다립니다.</p>
-      <p style="margin-top:10px; font-size:12px; color:rgba(255,255,255,0.5); line-height:1.8;">정확한 진단과 심층 상담으로<br>아이의 영어 학습 전반을 함께 설계합니다.</p>
     </div>
-    <a href="tel:01022447010" class="cta-phone">📞 &nbsp; 010-2244-7010</a>
-    <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:8px; line-height:1.9; letter-spacing:0.01em;">
-      이름 · 학년 · 상담 가능 시간을 문자로 보내주시면<br>빠르게 연락드립니다.
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+      <a href="tel:01022447010" class="cta-phone" style="max-width:none; margin-bottom:0;">📞 &nbsp; 010-2244-7010</a>
+      <a href="http://pf.kakao.com/_ZxobnG/chat" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:6px; background:var(--gold); color:var(--navy-deep); font-family:'Noto Serif KR',serif; font-size:16px; font-weight:700; padding:18px 12px; border-radius:4px; text-decoration:none; text-align:center;">💬 &nbsp;카카오톡</a>
+    </div>
+    <div style="font-size:12px; color:rgba(255,255,255,0.45); margin-top:4px; line-height:1.9; letter-spacing:0.01em;">
+      이름 · 학년 · 상담 가능 시간을<br>문자로 보내주시면 빠르게 연락드립니다.
     </div>
     <div style="margin-top:12px; font-size:12px; color:rgba(255,255,255,0.55); letter-spacing:0.02em;">
       📍 &nbsp;인천 연수구 컨벤시아대로230번길 54 닥터플러스몰 327~329호
     </div>
     <div class="cta-hours">
- <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:20px;">
-  <a href="https://instagram.com/jd_songdo" target="_blank"
-     style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.35); color:var(--gold); font-size:12px; font-weight:600; padding:12px 16px; border-radius:4px; text-decoration:none; letter-spacing:0.04em;">
-    📷 &nbsp;인스타그램
-  </a>
-  <a href="https://blog.naver.com/jdeweysongdo" target="_blank"
-     style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.35); color:var(--gold); font-size:12px; font-weight:600; padding:12px 16px; border-radius:4px; text-decoration:none; letter-spacing:0.04em;">
-    📝 &nbsp;네이버 블로그
-  </a>
-  <a href="https://pf.kakao.com/_jdsongdo/chat" target="_blank"
-     style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.35); color:var(--gold); font-size:12px; font-weight:600; padding:12px 16px; border-radius:4px; text-decoration:none; letter-spacing:0.04em;">
-    💬 &nbsp;카카오톡 채널
-  </a>
-</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px;">
+        <a href="https://instagram.com/jd_songdo" target="_blank"
+           style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.35); color:var(--gold); font-size:12px; font-weight:600; padding:12px 16px; border-radius:4px; text-decoration:none; letter-spacing:0.04em;">
+          📷 &nbsp;인스타그램
+        </a>
+        <a href="https://blog.naver.com/jdeweysongdo" target="_blank"
+           style="display:flex; align-items:center; justify-content:center; gap:6px; background:rgba(212,175,106,0.12); border:1px solid rgba(212,175,106,0.35); color:var(--gold); font-size:12px; font-weight:600; padding:12px 16px; border-radius:4px; text-decoration:none; letter-spacing:0.04em;">
+          📝 &nbsp;네이버 블로그
+        </a>
+      </div>
     </div>
   </div>
 </section>
