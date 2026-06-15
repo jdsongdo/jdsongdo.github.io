@@ -82,7 +82,7 @@
   .prog-category-block { margin-top: 28px; }
   .prog-category-block:first-of-type { margin-top: 8px; }
   .prog-category { font-size: 9px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); opacity: 0.45; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid rgba(27,45,127,0.1); }
-  .prog-alert { background: var(--navy); border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; }
+  .prog-alert { background: var(--navy); border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; text-align: center; }
   .prog-alert p { font-family: 'Noto Serif KR', serif; font-size: 14px; color: var(--white); line-height: 1.6; font-weight: 600; }
   .prog-alert p em { color: var(--gold); font-style: normal; }
   .programs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
@@ -101,6 +101,15 @@
   .prog-bullets { list-style: none; margin: 0; padding: 0; font-size: 13px; color: var(--text-muted); line-height: 1.85; }
   .prog-bullets li { padding-left: 14px; position: relative; margin-bottom: 2px; }
   .prog-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--navy); font-size: 18px; line-height: 1.4; font-weight: 700; }
+  .program-card.featured .prog-bullets { color: rgba(255,255,255,0.65); }
+  .program-card.featured .prog-bullets li::before { color: var(--gold); }
+  .teacher-bullets { list-style: none; margin: 0; padding: 0; font-size: 12px; line-height: 1.8; }
+  .teacher-bullets li { padding-left: 14px; position: relative; margin-bottom: 2px; }
+  .teacher-bullets li::before { content: '·'; position: absolute; left: 0; font-size: 18px; line-height: 1.4; font-weight: 700; }
+  .teacher-card.rep .teacher-bullets { color: rgba(27,45,127,0.72); }
+  .teacher-card.rep .teacher-bullets li::before { color: var(--navy-deep); }
+  .teacher-card.director .teacher-bullets, .teacher-card.native .teacher-bullets, .teacher-card.staff .teacher-bullets { color: rgba(255,255,255,0.55); }
+  .teacher-card.director .teacher-bullets li::before, .teacher-card.native .teacher-bullets li::before, .teacher-card.staff .teacher-bullets li::before { color: var(--gold); }
   .prog-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
   .prog-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; background: var(--blue-soft); color: var(--navy); }
   .program-card.featured .prog-tag { background: rgba(212,175,106,0.18); color: var(--gold); }
@@ -393,7 +402,7 @@
     <div class="navy-card" style="background:#14225e;">
       <div class="card-label">존듀이의 대답</div>
       <div class="card-main">영어는 도구입니다. 목적은 생각입니다.</div>
-      <div class="card-sub">존듀이 아카데미는 언어가 아닌 <strong style="color:var(--gold)">생각의 뿌리</strong> — 아이만의 고유한 문체, 관점, 철학적 깊이 — 를 키웁니다. AI가 1초 만에 만드는 것에는 없는 것. 원서를 깊이 읽어야만 그 뿌리가 자랍니다.</div>
+      <div class="card-sub">존듀이 아카데미는 언어가 아닌 <strong style="color:var(--gold)">생각의 뿌리</strong> — 아이만의 고유한 문체, 관점, 철학적 깊이 — 를 키웁니다. AI가 1초 만에 만드는 것에는 없는 것. 텍스트를 깊이 읽어야만 그 뿌리가 자랍니다.</div>
     </div>
     <div class="gold-quote">
       <p><strong>30년간 한 가지를 믿었습니다:</strong> 생각의 뿌리가 깊은 아이는 어디서든 꽃을 피운다는 것. 특목고와 명문대를 졸업하고 세계를 무대로 사는 제자들이 그 증거입니다.</p>
@@ -466,7 +475,11 @@
           <div class="prog-num">01</div>
           <div class="prog-name">존듀이 시그니처 논픽션</div>
           <div class="prog-en">JD Nonfiction · 세상을 보는 눈 </div>
-          <div class="prog-desc">30년 전통의 노하우와 미국 명문 대학의 학술적 통찰이 결합된 존듀이만의 커리큘럼입니다. 배경지식 확장과 비판적 사고를 결합한 논픽션 중심 학습은 아이들이 영어를 단순한 암기 대상이 아닌, 지식을 습득하고 논리를 세우는 강력한 도구로 활용하게 만듭니다. 사실과 데이터로 세상을 해석하는 힘 — 픽션이 채울 수 없는 지식의 뼈대를 만듭니다.</div>
+          <ul class="prog-bullets">
+            <li>30년 전통 × 미국 명문 대학 학술적 통찰</li>
+            <li>배경지식 확장과 비판적 사고를 결합한 논픽션 학습</li>
+            <li>사실과 데이터로 세상을 해석하는 힘 — 픽션이 채울 수 없는 지식의 뼈대</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">CORE</span>
             <span class="prog-tag">사고의 확장</span>
@@ -477,7 +490,11 @@
           <div class="prog-num">02</div>
           <div class="prog-name">베러티처스 원서 정독</div>
           <div class="prog-en">BT Fiction · 사람을 이해하는 힘 </div>
-          <div class="prog-desc">논픽션이 세상을 읽는다면, 픽션은 사람을 읽습니다. 소설 속 인물이 왜 그 선택을 했는지, 작가가 그 문장을 왜 그렇게 썼는지 — 베러티처스 Novel Study는 텍스트를 표면이 아닌 내부에서 해부합니다. 문학을 문학답게 읽는 훈련은 공감력과 상상력을 키우고, 논픽션이 채울 수 없는 인간 이해의 깊이를 만듭니다. 아무나 가르칠 수 없는 수업입니다.</div>
+          <ul class="prog-bullets">
+            <li>논픽션이 세상을 읽는다면, 픽션은 사람을 읽습니다</li>
+            <li>소설 속 인물의 선택과 작가의 의도를 내부에서 해부</li>
+            <li>공감력·인간 이해의 깊이 — 아무나 가르칠 수 없는 수업</li>
+          </ul>
           <div class="prog-tags" style="margin-top:10px;">
             <span class="prog-tag">CORE</span>
             <span class="prog-tag">정독의 근간</span>
@@ -566,7 +583,7 @@
       <div class="prog-category">한·영 이중 문해력</div>
 <div class="prog-alert">
   <p><em style="color:#F0D89A; font-size:15px;">"영어만 잘하는 아이는 위험합니다."</em><br>
-  <span style="color:rgba(255,255,255,0.5); font-size:13px; font-weight:400;">한국어와 영어, 두 언어로 깊이 사고하는 이중 문해력이 진짜 실력입니다.</span></p>
+  <span style="color:rgba(255,255,255,0.5); font-size:13px; font-weight:400;">한국어와 영어, 두 언어로 깊이 사고하는<br>이중 문해력이 진짜 실력입니다.</span></p>
 </div>
       <div class="programs-grid">
         <div class="program-card">
@@ -637,7 +654,11 @@
         <div class="teacher-role">김조안 대표 · 30년 교육 전문가</div>
         <div class="teacher-name">직접 키워서 압니다. 결과로 증명합니다.</div>
         <div style="font-family:'EB Garamond', serif; font-style:italic; font-size:12px; color:rgba(27,45,127,0.5); margin-bottom:8px; letter-spacing:0.03em;">영어 영문학 · 교육 심리학 전공</div>
-        <div class="teacher-desc">30년간 영어를 가르치고 10년 가까이 국어 독해력을 연구하며 특목·자사고·SKY 합격생을 다수 배출했습니다. 직접 키운 딸을 미국 명문대 4개에 합격시킨 그 철학으로 지금 존듀이를 이끕니다.</div>
+        <ul class="teacher-bullets">
+          <li>30년 영어 + 10년 국어 독해력 연구</li>
+          <li>특목·자사고·SKY 합격생 다수 배출</li>
+          <li>딸을 미국 명문대 4개 합격시킨 교육 철학</li>
+        </ul>
         <div class="teacher-tags">
           <span class="teacher-tag">영어·국어 이중 전문가</span>
           <span class="teacher-tag">자기주도 인재 양성</span>
@@ -648,7 +669,11 @@
         <div class="teacher-role">유시은 원장 · 연구하는 교육자</div>
         <div class="teacher-name">생각의 그릇을 키우는 리터러시 교육</div>
         <div style="font-family:'EB Garamond', serif; font-style:italic; font-size:12px; color:var(--gold); opacity:0.6; margin-bottom:8px; letter-spacing:0.03em;">UC Berkeley International Studies 전공 · 교육공학 석사</div>
-        <div class="teacher-desc">국내반부터 특목 준비반까지 모든 과정을 직접 지도하며 커리큘럼 설계와 교육 연구를 총괄합니다. 이 교육의 탁월함을 삶으로 먼저 증명해낸 교육자가 지금 아이들 곁에서 함께 뜁니다.</div>
+        <ul class="teacher-bullets">
+          <li>국내반~특목 준비반 전 과정 직접 지도</li>
+          <li>커리큘럼 설계·교육 연구 총괄</li>
+          <li>이 교육의 탁월함을 삶으로 먼저 증명한 교육자</li>
+        </ul>
         <div class="teacher-tags">
           <span class="teacher-tag">탐구·발표·논술 전문</span>
           <span class="teacher-tag">세상을 바꾸는 인재 양성</span>
@@ -659,7 +684,11 @@
         <div class="teacher-role">Ms.Julie · 인지과학을 아는 교육자</div>
         <div class="teacher-name">대치동 15년, 검증된 실력</div>
         <div style="font-family:'EB Garamond', serif; font-style:italic; font-size:12px; color:var(--gold); opacity:0.6; margin-bottom:8px; letter-spacing:0.03em;">UC Irvine Cognitive Science 전공 · 대치 아이엔 창립멤버</div>
-        <div class="teacher-desc">대치 아이엔·프라우드7·ILE 어학원에서 실력을 검증받은 베테랑입니다. 수동적 공부가 아닌 능동적 소통으로 영어를 가르칩니다.</div>
+        <ul class="teacher-bullets">
+          <li>대치 아이엔·프라우드7·ILE 검증 베테랑</li>
+          <li>인지과학 기반 능동적 소통 수업</li>
+          <li>영어로 생각하고 자신감 있게 말하는 환경</li>
+        </ul>
         <div class="teacher-tags">
           <span class="teacher-tag">대치동 15년 검증</span>
           <span class="teacher-tag">능동적 소통이 이루어지는 수업</span>
@@ -670,7 +699,11 @@
         <div class="teacher-role">Ms.Avery · 베스트셀러 작가</div>
         <div class="teacher-name">현직 작가에게 배우는 원서</div>
         <div style="font-family:'EB Garamond', serif; font-style:italic; font-size:12px; color:var(--gold); opacity:0.6; margin-bottom:8px; letter-spacing:0.03em;">Syracuse 영어교육·영문학 학사 · MFA 소설창작 석사</div>
-        <div class="teacher-desc">美 공교육 교사 출신이자 아마존 Top-10 베스트셀러 작가입니다. 작가의 시선으로 소설을 해부하고 심도 있는 Creative Writing으로 연결하는 수업, 오직 존듀이에서만 가능합니다.</div>
+        <ul class="teacher-bullets">
+          <li>美 공교육 교사 출신 · 아마존 Top-10 베스트셀러 작가</li>
+          <li>작가의 시선으로 소설 내부를 해부</li>
+          <li>Creative Writing으로 연결 — 오직 존듀이에서만</li>
+        </ul>
         <div class="teacher-tags">
           <span class="teacher-tag">현직 작가 직강</span>
           <span class="teacher-tag">독보적인 문학 분석</span>
@@ -680,7 +713,11 @@
       <div class="teacher-card staff">
         <div class="teacher-role">전문 강사진 · 대표 직접 선발</div>
         <div class="teacher-name">선한 영향력을 펼치는 진정한 교사</div>
-        <div class="teacher-desc">해외 경험을 가진 전문 선생님들 중 깐깐한 대표가 직접 고르고 트레이닝한 강사진입니다. 넓은 세상을 경험한 선생님이 아이 한 명 한 명의 가능성을 책임감 있게 이끌어냅니다.</div>
+        <ul class="teacher-bullets">
+          <li>해외 경험을 가진 전문 선생님만 선발</li>
+          <li>대표가 직접 고르고 트레이닝</li>
+          <li>아이 한 명 한 명의 가능성을 책임감 있게</li>
+        </ul>
         <div class="teacher-tags">
           <span class="teacher-tag">검증된 전문성</span>
           <span class="teacher-tag">사명감 있는 교사</span>
