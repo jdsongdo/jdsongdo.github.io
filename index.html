@@ -98,6 +98,9 @@
   .program-card.featured .prog-en { color: rgba(255,255,255,0.3); }
   .prog-desc { font-size: 13px; color: var(--text-muted); line-height: 1.85; }
   .program-card.featured .prog-desc { color: rgba(255,255,255,0.65); }
+  .prog-bullets { list-style: none; margin: 0; padding: 0; font-size: 13px; color: var(--text-muted); line-height: 1.85; }
+  .prog-bullets li { padding-left: 14px; position: relative; margin-bottom: 2px; }
+  .prog-bullets li::before { content: '·'; position: absolute; left: 0; color: var(--navy); font-size: 18px; line-height: 1.4; font-weight: 700; }
   .prog-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 10px; }
   .prog-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.08em; padding: 3px 9px; border-radius: 20px; background: var(--blue-soft); color: var(--navy); }
   .program-card.featured .prog-tag { background: rgba(212,175,106,0.18); color: var(--gold); }
@@ -492,7 +495,11 @@
           <div class="prog-num">03</div>
           <div class="prog-name">유즈스쿨</div>
           <div class="prog-en">Useschool · 미국 공교육 K-12</div>
-          <div class="prog-desc">미국 현지 초·중·고 공교육 과정(K-12)을 온라인으로 학습하는 디지털 미국 교과서 프로그램. 한국어 개입 없이 100% 영어로 수학, 과학, 사회를 배우며 자연스러운 모국어 습득 방식으로 영어로 생각하는 환경을 만듭니다.</div>
+          <ul class="prog-bullets">
+            <li>미국 K-12 공교육 과정을 100% 영어로 학습</li>
+            <li>수학·과학·사회를 영어로 — 교과 연계 몰입</li>
+            <li>한국어 개입 없이 영어로 생각하는 환경</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">영어 몰입</span>
             <span class="prog-tag">K-12 공교육</span>
@@ -503,7 +510,11 @@
           <div class="prog-num">04</div>
           <div class="prog-name">클리어플루언시</div>
           <div class="prog-en">ClearFluency · 미국 NRP 연구 기반 · 특허 기술</div>
-          <div class="prog-desc">미국 국립읽기위원회(NRP) 연구 기반 온라인 영어 낭독 도서관. 특허받은 음성 인식 기술로 실시간 발음·유창성을 교정합니다. 낭독을 하면, 독해 실력과 단어 암기력이 높아집니다.</div>
+          <ul class="prog-bullets">
+            <li>미국 NRP 연구 기반 영어 낭독 도서관</li>
+            <li>특허 음성 인식으로 실시간 발음·유창성 교정</li>
+            <li>낭독이 독해력과 어휘력을 함께 높임</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">낭독</span>
             <span class="prog-tag">실시간 AI 교정</span>
@@ -521,7 +532,11 @@
           <div class="prog-num">05</div>
           <div class="prog-name">Academic Writing</div>
           <div class="prog-en">아카데믹 에세이 · IB 수준 구조적 글쓰기</div>
-          <div class="prog-desc">논리적 사고를 글로 완성하는 훈련. 단락 구성, 근거 제시, 비판적 분석까지. 에세이를 쓰는 힘이 자기 생각을 증명하는 힘입니다.</div>
+          <ul class="prog-bullets">
+            <li>단락 구성·근거 제시·비판적 분석 훈련</li>
+            <li>IB 수준 아카데믹 에세이 작성</li>
+            <li>자기 생각을 글로 증명하는 힘</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">에세이</span>
             <span class="prog-tag">논리적 글쓰기</span>
@@ -532,7 +547,11 @@
           <div class="prog-num">06</div>
           <div class="prog-name">Debate &amp; Discussion</div>
           <div class="prog-en">AI 시대 구술·대면 면접 대비</div>
-          <div class="prog-desc">AI가 글을 대신 쓰는 시대, 구술 시험과 대면 면접이 늘어납니다. 실시간으로 생각을 정리하고 말로 증명하는 능력이 핵심 경쟁력입니다.</div>
+          <ul class="prog-bullets">
+            <li>AI 시대 핵심 역량 — 말로 증명하는 힘</li>
+            <li>실시간 사고 정리 및 구술 훈련</li>
+            <li>구술 시험·대면 면접 집중 대비</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">토론</span>
             <span class="prog-tag">구술 면접</span>
@@ -554,7 +573,11 @@
           <div class="prog-num">07</div>
           <div class="prog-name">스터디포스</div>
           <div class="prog-en">Study Force · 독해력 교정 및 언어사고 훈련</div>
-          <div class="prog-desc">인지심리학·언어학 전문가들이 개발한 독해력 교정 프로그램. 글을 의미 단위로 끊어 읽는 훈련으로 문해력과 공부 그릇을 키웁니다. 문자 정보 처리능력 개선을 통해 영재의 두뇌를 갖게 됩니다.</div>
+          <ul class="prog-bullets">
+            <li>인지심리학·언어학 전문가 개발 독해력 교정</li>
+            <li>의미 단위 끊어 읽기로 문해력·공부 그릇 확장</li>
+            <li>문자 정보 처리능력 개선으로 학습 효율 향상</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">국어 독해</span>
             <span class="prog-tag">언어사고 훈련</span>
@@ -565,7 +588,11 @@
           <div class="prog-num">08</div>
           <div class="prog-name">다빈치스쿨</div>
           <div class="prog-en">Da Vinci School · 탐구 역량 강화 및 논술</div>
-          <div class="prog-desc">초등 고학년~중·고등학생 대상. 독서 연계 탐구 활동과 소논문(주제탐구보고서) 작성으로 비교과 역량을 강화합니다. 스스로 탐구하고 논문을 쓰는 힘을 기릅니다.</div>
+          <ul class="prog-bullets">
+            <li>독서 연계 탐구 활동 및 소논문 작성</li>
+            <li>비교과 역량 강화 — 고교학점제 대비</li>
+            <li>스스로 탐구하고 논문 쓰는 힘</li>
+          </ul>
           <div class="prog-tags">
             <span class="prog-tag">탐구·논술</span>
             <span class="prog-tag">비교과 역량</span>
