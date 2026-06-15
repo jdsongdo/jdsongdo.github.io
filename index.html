@@ -287,10 +287,19 @@
   }
 
   /* ── MOBILE ── */
-  @media (max-width: 560px) {
+  @media (max-width: 768px) {
     .programs-grid { grid-template-columns: 1fr; }
     .program-card.featured, .program-card.full { grid-column: span 1; }
     .vision-grid { grid-template-columns: 1fr; }
+    .teacher-grid { grid-template-columns: 1fr; }
+    .section-inner { max-width: 100%; }
+    .story-body { padding: 20px 16px; }
+  }
+  @media (max-width: 560px) {
+    .hero { padding: 70px 20px 48px; }
+    .cow-section, .philosophy-section, .programs-section,
+    .teachers-section, .story-section, .vision-section,
+    .cta-section { padding: 60px 20px; }
   }
 </style>
 </head>
