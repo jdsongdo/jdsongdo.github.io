@@ -263,6 +263,29 @@
     padding: 4px;
   }
 
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      position: absolute;
+      top: 59px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px 24px 24px;
+      border-bottom: 3px solid var(--navy);
+      gap: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+    .nav-menu.open { display: flex; }
+    .nav-menu a { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.06); width: 100%; }
+    .nav-menu a:last-child { border-bottom: none; }
+    .nav-cta { margin-top: 4px; text-align: center !important; width: 100%; justify-content: center; display: block; }
+    .nav-toggle { display: block; }
+    .site-nav { position: sticky; }
+  }
+
   /* ── MOBILE ── */
   @media (max-width: 560px) {
     .programs-grid { grid-template-columns: 1fr; }
@@ -805,6 +828,22 @@
     });
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
+
+  // 햄버거 메뉴
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    navToggle.textContent = isOpen ? '✕' : '☰';
+    navToggle.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  });
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      navToggle.textContent = '☰';
+      navToggle.setAttribute('aria-label', '메뉴 열기');
+    });
+  });
 </script>
 </body>
 </html>
