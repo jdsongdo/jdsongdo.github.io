@@ -204,6 +204,65 @@
   .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── NAV ── */
+  .site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 3px solid var(--navy);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  .nav-inner {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a2744;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+  .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .nav-menu a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .nav-menu a:hover { opacity: 0.7; }
+  .nav-cta {
+    background: var(--navy) !important;
+    color: #fff !important;
+    padding: 7px 14px;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { opacity: 0.85 !important; }
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #1a2744;
+    line-height: 1;
+    padding: 4px;
+  }
+
   /* ── MOBILE ── */
   @media (max-width: 560px) {
     .programs-grid { grid-template-columns: 1fr; }
@@ -213,6 +272,21 @@
 </style>
 </head>
 <body>
+
+<!-- ══ NAV ══ -->
+<header class="site-nav" id="top">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">존듀이 아카데미</a>
+    <button class="nav-toggle" aria-label="메뉴 열기">☰</button>
+    <nav class="nav-menu" id="nav-menu">
+      <a href="#why">Why존듀이</a>
+      <a href="#curriculum">커리큘럼</a>
+      <a href="#team">선생님</a>
+      <a href="#admission">입학안내</a>
+      <a href="#contact" class="nav-cta">상담신청</a>
+    </nav>
+  </div>
+</header>
 
 <!-- ══ HERO ══ -->
 <section class="hero">
